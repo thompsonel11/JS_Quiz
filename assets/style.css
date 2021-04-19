@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#viewHighscores {
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(88, 22, 150);
+}
+
+#timer {
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+}
+
+#question {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+
+#ul {
+    list-style: none;
+}
