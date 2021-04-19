@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Code Quiz</title>
+    <link rel="stylesheet" href="reset.css"/>
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  
+  <body>
+        <header class = "header"> 
+            <div id = "viewHighscores">View Highscores</div>
+            <div id = "timer"> Time: </div> 
+        </header>
+
+        <main>
+            <h1 id = "CodeQuizChallenge" data-state = "visible">Code Quiz Challenge</h1>
+            <h3 id = "instructions" data-state= "visible">Try to answer the following questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by 10 seconds!</h3>
+            
+            <div id = "startQuizButton">
+                <button id = "StartButton">Start Quiz</button>
+            </div>   
+
+            <div id = "Question" data-state = "hidden">Question: </div> 
+            <ul id = "answerChoiceContainer" data-state= "hidden">
+                <li id= "answerChoice0"></li>
+                <li id= "answerChoice1"></li>
+                <li id= "answerChoice2"></li>
+                <li id= "answerChoice3"></li>
+            </ul>
+
+            <h1 id = "allDone" data-state= "hidden">All Done!</h1>
+            <h3 id = "finalScore" data-state = "hidden"> Your final score is:</h3>
+            <form id = "submitScore"> 
+                <div class="userInitials">
+                    <p id = "initials"> Enter Initials: </p>
+                    <button id="submit">Submit</button>
+                </div>    
+            </form>
+        </main>
+    </body>
