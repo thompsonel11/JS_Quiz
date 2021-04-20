@@ -65,20 +65,23 @@ function startTimer () {
     if (timerRamining === 0) {
         clearInterval (timerEl)
         }
-    }, 10000;
+    }, 1000;
 }
 
 // NEED HELP
 // Functions to reflect correct and incorrect answers
 function correctAnswer() {
-    .textContent = "Correct!";
+    NOTSUREWHATGOESHERE.textContent = "Correct!";
     scoreCounter++;
 }
 function incorrectAnswer () {
-    .textContent = "Incorrect!";
+    ORHERE.textContent = "Incorrect!";
     scoreCounter--;
 }
 
-// ASSESS USER INPUT AND DETERMINE IF ANSWER IS CORRECT/INCORRECT
+// EVENT LISTENERS TO ASSESS USER INPUT AND DETERMINE IF 
+// ANSWER IS CORRECT/INCORRECT
+
+
 
 // DISPLAY FINAL SCORE AND FOR FORM USER TO INPUT INITIALS
