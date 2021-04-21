@@ -1,21 +1,22 @@
-// ADD QUERY SELECTORS FOR THE FOLLOWING: 
 var timerEl = document.querySelector("#timer");
 var timer;
 var startButtonEl = document.querySelector("#startButton");
 var timeRemaining = 50;
-var questionEl = document.querySelector("#question")
-var answerContainer = document.querySelector("#answerChoiceContainer")
+var questionEl = document.querySelector("#question");
+var answerContainer = document.querySelector("#answerChoiceContainer");
 
 var AC0El = document.querySelector("#answerChoice0");
 var AC1El = document.querySelector("#answerChoice1");
 var AC2El = document.querySelector("#answerChoice2");
 var AC3El = document.querySelector("#answerChoice3");
 var totalScore = document.querySelector("#finalScore");
-var j=0;
+var currentQuestionIndex=0;
 var startScreen = document.querySelector("#startQuizButton");
 var choiceButton = document.querySelector(".choice");
-var correctAnswer = 
-var chosen = 
+var scoreCounter = 50;
+// var correctAnswer = 
+// var chosen = 
+
 
 
 // Define all questions, answer choices and identify correct answer
@@ -62,18 +63,28 @@ var quiz = [{
 ];
 
 
-function showQuestions () {
-    if (j===quiz.length){
-        clearInterval(timeRemaining)
+function showCurrentQuestion () {
+    if (currentQuestionIndex >= quiz.length - 1) {
+        clearInterval(timeRemaining);
+        displayQuizResults();
+        currentQuestionIndex = quiz.length - 1;
     }
-    startScreen.hidden = true;
-    questionEl.hidden = false;
-    answerChoiceContainer.hidden = false;
-    questionEl.textContent=quiz[j].question;
-    AC0El.textContent=quiz[j].AC0;
-    AC1El.textContent=quiz[j].AC1;
-    AC2El.textContent=quiz[j].AC2;
-    AC3El.textContent=quiz[j].AC3;
+
+
+    if(quiz[currentQuestionIndex] !== undefined) {
+        startScreen.hidden = true;
+        questionEl.hidden = false;
+        answerChoiceContainer.hidden = false;
+        questionEl.textContent=quiz[currentQuestionIndex].question;
+        AC0El.textContent=quiz[currentQuestionIndex].AC0;
+        AC1El.textContent=quiz[currentQuestionIndex].AC1;
+        AC2El.textContent=quiz[currentQuestionIndex].AC2;
+        AC3El.textContent=quiz[currentQuestionIndex].AC3;
+    }
+}
+
+function displayQuizResults() {
+    //TODO: put something here
 }
 
 // Function that creates timer
@@ -91,8 +102,9 @@ function startTimer () {
 }
 
 // NEED TO: Create function to cycle through questions
-function checkAnswer() {
-
+function answerIsCorrect(questionMetadata, answerKey) {
+    const correctAnswer = questionMetadata.correctAnswer;
+    return questionMetadata[answerKey] === correctAnswer;
 }
 
 // NEED TO: Create functions to change score for correct/incorrect and display message to user 'Correct! or Incorrect!' 
@@ -108,15 +120,28 @@ function incorrectAnswer () {
 
 // NEED TO: create function to calculate final score and open form for user to input initials. This will need to access local storage. 
 
+function tallyResult(questionMetadata, selectedAnswer) {
+    if(answerIsCorrect(questionMetadata, selectedAnswer)) {
+        scoreCounter++;
+    }
 
+    currentQuestionIndex++;
+    showCurrentQuestion();
+}
 
 // Event Listener to start the game + trigger timer
 startButton.addEventListener("click", function() {
     startTimer();
-    showQuestions();
+    showCurrentQuestion();
 })
 
 choiceButton.addEventListener("click", function(e){
     e.preventDefault();
-    if (e.target.matches('button'))
+    console.log(e)
+    
+    if (e.target.matches("#answerChoice0")) {
+        tallyResult (quiz[currentQuestionIndex], "AC0")
+    }
+
+    console.log(scoreCounter);
 })
