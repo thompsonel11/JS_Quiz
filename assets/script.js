@@ -55,7 +55,8 @@ var quiz = [{
 // Event Listener to start the game + trigger timer
 startButton.addEventListener("click", function() {
     startTimer();
-    // NEED TO PULL IN FIRST QUESTION
+    questionEl ();
+    // ^^ NEED TO PULL IN FIRST QUESTION
 
 }
 
