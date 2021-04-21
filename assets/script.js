@@ -1,12 +1,13 @@
 // ADD QUERY SELECTORS FOR THE FOLLOWING: 
-var timerEl = document.querySelector(#timer);
-var startButtonEl = document.querySelector(#startButton);
-var questionEl = document.querySelector(#question);
-var AC0El = document.querySelector(#answerChoice0);
-var AC1El = document.querySelector(#answerChoice1);
-var AC2El = document.querySelector(#answerChoice2);
-var AC3El = document.querySelector(#answerChoice3);
-var totalScore = document.querySelector(#finalScore);
+var timerEl = document.querySelector("#timer");
+var startButtonEl = document.querySelector("#startButton");
+var timeRemaining = 50;
+var questionEl = document.querySelector("#question");
+var AC0El = document.querySelector("#answerChoice0");
+var AC1El = document.querySelector("#answerChoice1");
+var AC2El = document.querySelector("#answerChoice2");
+var AC3El = document.querySelector("#answerChoice3");
+var totalScore = document.querySelector("#finalScore");
 
 // Define all questions, answer choices and identify correct answer
 var quiz = [{
@@ -16,7 +17,7 @@ var quiz = [{
     AC2: 'White Russian',
     AC3: 'Arnold Palmer',
     correctAnswer: 'White Russian'
-}
+},
 {
     question: 'What "really tied the room together"?',
     AC0: 'rug',
@@ -24,15 +25,15 @@ var quiz = [{
     AC2: 'lamp',
     AC3:  'ropes',
     correctAnswer: 'rug'
-}
+},
 {
     question: 'Fill in the blank: "This is not _____, this is bowling. There are rules.',
     AC0: 'prison',
-    AC1: 'Nam'
+    AC1: 'Nam',
     AC2: 'the circus',
     AC3: 'a playground',
     correctAnswer: 'Nam'
-}
+},
 {
     question: 'Which of the following is *not* one of the alternative names The Dude suggests to The Big Lebowski?',
     AC0: 'His Dudeness',
@@ -40,13 +41,13 @@ var quiz = [{
     AC2: 'Duder',
     AC3: 'Mounsieur Dude',
     correctAnswer: 'Mounsieur Dude'
-}
+},
 {
     question: 'Who kidnapped Bunny?',
     AC0: 'Bunny',
     AC1: 'The Big Lebowski',
     AC2: 'The Nihilists',
-    AC3: 'Jackie Treehorn'
+    AC3: 'Jackie Treehorn',
     correctAnswer: 'Bunny'
 }
 ];
@@ -54,34 +55,32 @@ var quiz = [{
 // Event Listener to start the game + trigger timer
 startButton.addEventListener("click", function() {
     startTimer();
+    // NEED TO PULL IN FIRST QUESTION
 
 }
 
-// Function that creates timer
+// NOT WORKING: Function that creates timer
 function startTimer () {
     timerEl = setInterval(function (){
         timeRemaining--;
-        timerEl.textContent = timeRemaining;
+        timerEl.textContent = timeRemaining + 'seconds';
     if (timerRamining === 0) {
-        clearInterval (timerEl)
+        clearInterval (timerEl);
         }
-    }, 1000;
+    }, 1000);
 }
 
-// NEED HELP
-// Functions to reflect correct and incorrect answers
+// NEED TO: Create function to cycle through questions
+
+// NEED TO: Create functions to change score for correct/incorrect and display message to user 'Correct! or Incorrect!' 
 function correctAnswer() {
     NOTSUREWHATGOESHERE.textContent = "Correct!";
     scoreCounter++;
-}
+},
 function incorrectAnswer () {
     ORHERE.textContent = "Incorrect!";
     scoreCounter--;
 }
 
-// EVENT LISTENERS TO ASSESS USER INPUT AND DETERMINE IF 
-// ANSWER IS CORRECT/INCORRECT
 
-
-
-// DISPLAY FINAL SCORE AND FOR FORM USER TO INPUT INITIALS
+// NEED TO: create function to calculate final score and open form for user to input initials. This will need to access local storage. 
