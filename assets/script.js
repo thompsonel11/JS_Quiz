@@ -1,13 +1,22 @@
 // ADD QUERY SELECTORS FOR THE FOLLOWING: 
 var timerEl = document.querySelector("#timer");
+var timer;
 var startButtonEl = document.querySelector("#startButton");
 var timeRemaining = 50;
-var questionEl = document.querySelector("#question");
+var questionEl = document.querySelector("#question")
+var answerContainer = document.querySelector("#answerChoiceContainer")
+
 var AC0El = document.querySelector("#answerChoice0");
 var AC1El = document.querySelector("#answerChoice1");
 var AC2El = document.querySelector("#answerChoice2");
 var AC3El = document.querySelector("#answerChoice3");
 var totalScore = document.querySelector("#finalScore");
+var j=0;
+var startScreen = document.querySelector("#startQuizButton");
+var choiceButton = document.querySelector(".choice");
+var correctAnswer = 
+var chosen = 
+
 
 // Define all questions, answer choices and identify correct answer
 var quiz = [{
@@ -52,32 +61,45 @@ var quiz = [{
 }
 ];
 
-// Event Listener to start the game + trigger timer
-startButton.addEventListener("click", function() {
-    startTimer();
-    questionEl ();
-    // ^^ NEED TO PULL IN FIRST QUESTION
 
+function showQuestions () {
+    if (j===quiz.length){
+        clearInterval(timeRemaining)
+    }
+    startScreen.hidden = true;
+    questionEl.hidden = false;
+    answerChoiceContainer.hidden = false;
+    questionEl.textContent=quiz[j].question;
+    AC0El.textContent=quiz[j].AC0;
+    AC1El.textContent=quiz[j].AC1;
+    AC2El.textContent=quiz[j].AC2;
+    AC3El.textContent=quiz[j].AC3;
 }
 
-// NOT WORKING: Function that creates timer
+// Function that creates timer
+
 function startTimer () {
-    timerEl = setInterval(function (){
+    timer = setInterval(function (){
         timeRemaining--;
         timerEl.textContent = timeRemaining + 'seconds';
-    if (timerRamining === 0) {
-        clearInterval (timerEl);
+    if (timeRemaining === 0) {
+        clearInterval (timeRemaining);
         }
     }, 1000);
+    console.log(timeRemaining);
+  
 }
 
 // NEED TO: Create function to cycle through questions
+function checkAnswer() {
+
+}
 
 // NEED TO: Create functions to change score for correct/incorrect and display message to user 'Correct! or Incorrect!' 
 function correctAnswer() {
     NOTSUREWHATGOESHERE.textContent = "Correct!";
     scoreCounter++;
-},
+}
 function incorrectAnswer () {
     ORHERE.textContent = "Incorrect!";
     scoreCounter--;
@@ -85,3 +107,16 @@ function incorrectAnswer () {
 
 
 // NEED TO: create function to calculate final score and open form for user to input initials. This will need to access local storage. 
+
+
+
+// Event Listener to start the game + trigger timer
+startButton.addEventListener("click", function() {
+    startTimer();
+    showQuestions();
+})
+
+choiceButton.addEventListener("click", function(e){
+    e.preventDefault();
+    if (e.target.matches('button'))
+})
