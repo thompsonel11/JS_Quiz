@@ -1,7 +1,7 @@
 var timerEl = document.querySelector("#timer");
 var timer;
 var startButtonEl = document.querySelector("#startButton");
-var timeRemaining = 50;
+var timeRemaining = 10;
 var questionEl = document.querySelector("#question");
 var answerContainer = document.querySelector("#answerChoiceContainer");
 
@@ -12,7 +12,8 @@ var AC3El = document.querySelector("#answerChoice3");
 var totalScore = document.querySelector("#finalScore");
 var currentQuestionIndex=0;
 var startScreen = document.querySelector("#startQuizButton");
-var choiceButton = document.querySelector(".choice");
+var choiceButton = document.querySelectorAll(".choice");
+console.log(choiceButton);
 var scoreCounter = 50;
 // var correctAnswer = 
 // var chosen = 
@@ -92,13 +93,12 @@ function displayQuizResults() {
 function startTimer () {
     timer = setInterval(function (){
         timeRemaining--;
-        timerEl.textContent = timeRemaining + 'seconds';
+        // console.log(timeRemaining + 'that we see')
+        timerEl.textContent = timeRemaining + ' seconds';
     if (timeRemaining === 0) {
-        clearInterval (timeRemaining);
+        clearInterval (timer);
         }
-    }, 1000);
-    console.log(timeRemaining);
-  
+    }, 1000);  
 }
 
 // NEED TO: Create function to cycle through questions
@@ -138,10 +138,12 @@ startButton.addEventListener("click", function() {
 choiceButton.addEventListener("click", function(e){
     e.preventDefault();
     console.log(e)
-    
-    if (e.target.matches("#answerChoice0")) {
-        tallyResult (quiz[currentQuestionIndex], "AC0")
-    }
+    console.log('buntton clicked')
+    // var allChoices = document.getElementsByClassName('choice')
 
-    console.log(scoreCounter);
+    // if (e.target.matches(allChoices[1].getAttribute('id'))) {
+    //     tallyResult (quiz[currentQuestionIndex], "AC0")
+    // }
+
+    // console.log(scoreCounter);
 })
