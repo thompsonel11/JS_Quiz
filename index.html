@@ -25,22 +25,24 @@
 
             <div id = "question" hidden></div>
             <div id = "answerChoiceContainer" hidden>
-                <button class = "choice" id= "answerChoice0" onclick= "checkAnswer('zero')"></button>
-                <button class = "choice" id= "answerChoice1" onclick= "checkAnswer('one')"></button>
-                <button class = "choice" id= "answerChoice2" onclick= "checkAnswer('two')"></button>
-                <button class = "choice" id= "answerChoice3" onclick= "checkAnswer('three')"></button>
+                <button class = "choice" id= "answerChoice0" onclick= "checkAnswer(event)"></button>
+                <button class = "choice" id= "answerChoice1" onclick= "checkAnswer(event)"></button>
+                <button class = "choice" id= "answerChoice2" onclick= "checkAnswer(event)"></button>
+                <button class = "choice" id= "answerChoice3" onclick= "checkAnswer(event)"></button>
             </div>
 
             <div id = "rightORwrong"></div>
 
             <h2 id = "allDone" hidden>All Done!</h2>
-            <h4 id = "finalScore" hidden>Your final score is:</h4>
+            <h4 id = "finalScore" hidden>Your final score is: <span id = "secondsLeft"></span></h4>
 
-            <form id = "submitScore" hidden> 
+            <form  id="submitScore" hidden>
                 <div class="userInitials">
-                    <p id = "initials"> Enter Initials: </p>
-                    <button id="submit">Submit</button>
-                </div>                
+                    <label for="initials">Enter initials: </label>
+                    <input type="text" name="initials" id="initials"/>
+                </div>
+                <!--add the onclick for this button-->
+                <button id="submit">Submit</button>   
             </form>
         </main>
 
