@@ -1,89 +1,37 @@
-# 04 Web APIs: Code Quiz
+# Web APIs: Code Quiz
 
-## Your Task
+https://thompsonel11.github.io/JS_Quiz/
+https://github.com/thompsonel11/JS_Quiz
 
-At some point in your journey to become a full-stack web developer, you’ll likely be asked to complete a coding assessment&mdash;perhaps as part of an interview process. A typical coding assessment includes both multiple-choice questions and interactive coding challenges. 
+## Assignment
 
-To help familiarize you with these tests and allow you to use the skills covered in this unit, this week’s homework invites you to build a timed coding quiz with multiple-choice questions. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean, polished, and responsive user interface. 
+The purpose of this assignment is to utilize JavaScript to create a quiz. I chose to create a quiz on the classic film "The Big Lebowski". 
 
-This week’s coursework will equip you with all the skills you need to succeed in this assignment.
+## Start Page
 
-## User Story
+My quiz begins by presenting a screen that displays: 
+- the title 
+- a link to "View Highscores"
+- instructions that explain how the score is calculated 
+- a "start quiz" button that triggers the timer and presents the user with the first question. 
 
-```
-AS A coding boot camp student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
-```
+![](pics/StartPage.png)
 
-## Acceptance Criteria
+## Begin Quiz
 
-```
-GIVEN I am taking a code quiz
-WHEN I click the start button
-THEN a timer starts and I am presented with a question
-WHEN I answer a question
-THEN I am presented with another question
-WHEN I answer a question incorrectly
-THEN time is subtracted from the clock
-WHEN all questions are answered or the timer reaches 0
-THEN the game is over
-WHEN the game is over
-THEN I can save my initials and my score
-```
+Once the user has clicked the start button, you will notice a countdown appears and begins counting down from 50. The user will begin answering questions.  With each question answered, the user will progress to the next question. With each incorrect answer, the clock is deducted 10 seconds.  The final time is the user's score. 
 
-## Mock-Up
+![](pics/BeginQuiz.png)
 
-The following animation demonstrates the application functionality:
+## Completed Quiz
 
-![A user clicks through an interactive coding quiz, then enters initials to save the high score before resetting and starting over.](./Assets/04-web-apis-homework-demo.gif)
+Once the user has either run out of time, or completed all quiz questions, the user will be presented with an "All Done" message. He/she will also be presented with their score and prompted to enter his/her initials into a form. 
 
-## Grading Requirements
+![](pics/CompletedQuiz.png)
 
-This homework is graded based on the following criteria: 
+## View Highscores
 
-### Technical Acceptance Criteria: 40%
+Once the user enters their initials, they will click the "submit" button which will direct them to the "Highscores" page.  This page can also be accessed via the "View highscores" link in the top, left portion of the webpage. 
 
-* Satisfies all of the preceding acceptance criteria.
+INSERT SCREENSHOT ONCE YOU GET LOCAL STOAGE WORKING
 
-### Deployment: 32%
-
-* Application deployed at live URL.
-
-* Application loads with no errors.
-
-* Application GitHub URL submitted.
-
-* GitHub repository contains application code.
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the homework instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality readme file with description, screenshot, and link to deployed application.
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository, with a unique name and a readme describing the project.
-
----
-
-© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
