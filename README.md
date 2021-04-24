@@ -1,6 +1,7 @@
 # Web APIs: Code Quiz
 
 https://thompsonel11.github.io/JS_Quiz/
+
 https://github.com/thompsonel11/JS_Quiz
 
 ## Assignment
@@ -31,7 +32,7 @@ Once the user has either run out of time, or completed all quiz questions, the u
 
 ## View Highscores
 
-Once the user enters their initials, they will click the "submit" button which will direct them to the "Highscores" page.  This page can also be accessed via the "View highscores" link in the top, left portion of the webpage. 
+Once the user enters their initials, they will click the "submit" button which will direct them to the "Highscores" page.  This page can also be accessed via the "View highscores" link in the top, left portion of the webpage. There is a "Go back" button on the page that will redirect the user back to the quiz, and a reset button that will reset the highscores that have been locally stored. 
 
 INSERT SCREENSHOT ONCE YOU GET LOCAL STOAGE WORKING
 

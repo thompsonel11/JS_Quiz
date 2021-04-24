@@ -6,7 +6,6 @@ main {
     width: 50%;
     text-align: center;
     margin: auto;
-   
 }
 
 .header {
@@ -18,12 +17,16 @@ main {
     font-size: 14px;
     font-weight: bold;
     color: rgb(88, 22, 150);
+    padding-left: 30px;
+    padding-top: 15px;
 }
 
 #timer {
     font-size: 14px;
     font-weight: bold;
     color: black;
+    padding-right: 30px;
+    padding-top: 15px;
 }
 
 #question {

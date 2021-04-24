@@ -1,16 +1,10 @@
-// PSEUDO CODE 
-// 1. define buttons : back + clear
-// 2. create event listeners for buttons 
-// 3. define user initials + final score
-// 4. retrieve user initials + score (JSON parse?????)
-// 5. create string (stringify) for user initials + scores 
-
-
+// Declare Global Variables
 var backButtonEl = document.querySelector("#goBack");
 var clearButtonEl = document.querySelector("#clearHighscores");
-var finalScore = JSON.parse(localStorage.getItem('highscores'))
+var finalScore = JSON.parse(localStorage.getItem('highscores'));
+// var userInitialsEl = document.getElementById('initials').nodeValue;
 
-
+// Event Listeners for the Back and Clear buttons on the webpage 
 backButtonEl.addEventListener("click", function(event) {
     console.log(event)
     window.location.replace("./index.html")
@@ -22,18 +16,12 @@ clearButtonEl.addEventListener("click", function(event) {
     localStorage.clear();
 });
 
+// COULD NOT GET TO WORK Function to store scores locally and sort in decending order
+
+
 // function storeScores () {
-//     var userInitialsEl = document.getElementById("")
+//     var userInitialsEl = document.getElementById('initials').nodeValue;
 // }
-
-
-
-// // With Tom
-// let scores = JSON.parse(localStorage.getItem('highscores'))
-
-// localStorage.setItem('highscores',JSON.stringify(scores))
-// var highScores = localStorage.getItem('highscores')
-
 
 // let scores = []
 // if (localStorage.getItem('highscores') === false) {

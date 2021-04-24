@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body .highScores h1{
+    width: 50%;
+    text-align: center;
+    margin: auto;
+  
+}
+
+.container {
+    width: 50%;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,3 +1,4 @@
+// Define all global variables
 var timerEl = document.querySelector("#timer");
 var timer;
 var timeRemaining = 50;
@@ -63,13 +64,13 @@ var quiz = [
     }
 ];
 
-// DONE Event Listener to start the game + trigger timer
+// Event Listener to start the game + trigger timer
 startButton.addEventListener("click", function() {
     startTimer();
     showCurrentQuestion();
 })
 
-// DONE Function that creates timer
+// Function that creates timer that counts down 
 function startTimer () {
     timer = setInterval(function (){
         timeRemaining--;
@@ -81,13 +82,12 @@ function startTimer () {
     }, 1000);  
 }
 
-// DONE Function to display question + answer choices
+//Function to display question + answer choices until there are no more questions and display results once finished
 function showCurrentQuestion () {
     if (currentQuestionIndex > quiz.length - 1) {
         clearInterval(timer);
         console.log(currentQuestionIndex)
         displayQuizResults();
-        // currentQuestionIndex = quiz.length - 1;
     }
 
     if(quiz[currentQuestionIndex] !== undefined) {
@@ -102,7 +102,7 @@ function showCurrentQuestion () {
     }
 }
 
-// DONEish (unless I want to add on stuff for scoring here) Function to compare user selection to correct answer  
+// Function to compare user selection to correct answer, retrieve the next question, and deduct 10 sec/points if incorrect
 function checkAnswer(event){
     if(event.target.textContent === quiz[currentQuestionIndex].correctAnswer) {
         console.log('Correct!')
@@ -114,7 +114,7 @@ function checkAnswer(event){
         showCurrentQuestion()
 }
 
-// Display Quiz Results
+// Function to display quiz results once the quiz is completed/user runs out of time
 function displayQuizResults () {
     console.log('results')
     questionEl.hidden = true;
@@ -132,6 +132,7 @@ function displayQuizResults () {
     submitScoreEl.hidden = false;
 }
 
+// Event listener for the submit button that will direct the user to the Highscores page
 submitButton.addEventListener("click", function(event){
     event.preventDefault();
     window.location.replace("./highScores.html")
