@@ -14,34 +14,35 @@
             <a href = "highScores.html" id = "viewHighscores">View Highscores</a>
             <div id = "timer"> Time: </div> 
         </header>
-
+<br>
         <main>
             <h1 id = "CodeQuizChallenge">Code Quiz Challenge</h1>
-            
+<br>
+<br>            
             <div id = "startQuizButton">
-                <h3 id = "instructions" >Try to answer the following questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by 10 seconds!</h3>
+                <h3 id = "instructions" >Try to answer the following questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by 10 seconds!</h3> <br>
                 <button id = "startButton">Start Quiz</button>
             </div>   
 
             <div id = "question" hidden></div>
+            <br>
             <div id = "answerChoiceContainer" hidden>
                 <button class = "choice" id= "answerChoice0" onclick= "checkAnswer(event)"></button>
                 <button class = "choice" id= "answerChoice1" onclick= "checkAnswer(event)"></button>
                 <button class = "choice" id= "answerChoice2" onclick= "checkAnswer(event)"></button>
                 <button class = "choice" id= "answerChoice3" onclick= "checkAnswer(event)"></button>
             </div>
-
-            <div id = "rightORwrong"></div>
-
-            <h2 id = "allDone" hidden>All Done!</h2>
-            <h4 id = "finalScore" hidden>Your final score is: <span id = "secondsLeft"></span></h4>
+<br>
+            <h2 id = "allDone" hidden>All Done!</h2><br>
+            <h4 id = "finalScore" hidden>Your final score is: <span id = "secondsLeft"></span></h4> <br>
 
             <form  id="submitScore" hidden>
                 <div class="userInitials">
                     <label for="initials">Enter initials: </label>
                     <input type="text" name="initials" id="initials"/>
                 </div>
-                <!--add the onclick for this button-->
+                <br>
+                <!--add the onclick for this button???-->
                 <button id="submit">Submit</button>   
             </form>
         </main>

@@ -14,7 +14,6 @@ var currentQuestionIndex = 0;
 var allDoneEl = document.querySelector("#allDone");
 var totalScore = document.querySelector("#finalScore");
 var scoreCounter = 50;
-var amountCorrect = 0;
 var titleEl = document.querySelector("#CodeQuizChallenge");
 var secondsLeftEl = document.querySelector("#secondsLeft");
 var submitScoreEl = document.querySelector("#submitScore")
@@ -137,3 +136,5 @@ submitButton.addEventListener("click", function(event){
     event.preventDefault();
     window.location.replace("./highScores.html")
 })
+
+
