@@ -17,8 +17,9 @@ var totalScore = document.querySelector("#finalScore");
 var scoreCounter = 50;
 var titleEl = document.querySelector("#CodeQuizChallenge");
 var secondsLeftEl = document.querySelector("#secondsLeft");
-var submitScoreEl = document.querySelector("#submitScore")
-var submitButton = document.querySelector("#submit")
+var submitScoreEl = document.querySelector("#submitScore");
+var submitButton = document.querySelector("#submit");
+var getInitials = document.querySelector('#initials')
 
 // Define all questions, answer choices and identify correct answer
 var quiz = [
@@ -135,6 +136,8 @@ function displayQuizResults () {
 // Event listener for the submit button that will direct the user to the Highscores page
 submitButton.addEventListener("click", function(event){
     event.preventDefault();
+    localStorage.setItem("initials", getInitials.value) 
+    localStorage.setItem("score", timeRemaining)
     window.location.replace("./highScores.html")
 })
 
