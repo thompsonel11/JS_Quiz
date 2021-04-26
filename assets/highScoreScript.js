@@ -10,8 +10,6 @@ x.setAttribute('id', textInitial);
 var listEl = document.getElementById("userList").appendChild(x);                  
 listEl.innerHTML = `${textInitial} - ${textScore}`
 
-// var userInitialsEl = document.getElementById('initials').nodeValue;
-
 // Event Listeners for the Back and Clear buttons on the webpage 
 backButtonEl.addEventListener("click", function(event) {
     console.log(event)
@@ -24,7 +22,7 @@ clearButtonEl.addEventListener("click", function(event) {
     localStorage.clear();
 });
 
-// COULD NOT GET TO WORK Function to store scores locally and sort in decending order
+// IN PROGRESS: Ran out of time. Function to store scores locally and sort in decending order
 
 
 // function storeScores () {

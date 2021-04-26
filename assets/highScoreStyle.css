@@ -4,16 +4,16 @@
 }
 
 body .highScores h1{
-    width: 50%;
     text-align: center;
     margin: auto;
-  
+    padding-top: 50px;
 }
 
 .container {
-    width: 50%;
+    width: 50%; 
     text-align: center;
     margin: auto;
     display: flex;
     justify-content: space-between;
+    padding: 25px;
 }
