@@ -24,14 +24,12 @@ clearButtonEl.addEventListener("click", function(event) {
 
 // IN PROGRESS: Ran out of time. Function to store scores locally and sort in decending order
 
-
-// function storeScores () {
-//     var userInitialsEl = document.getElementById('initials').nodeValue;
-// }
-
-// let scores = []
-// if (localStorage.getItem('highscores') === false) {
-//     scores = []}
-// else {
-//     scores = JSON.parse(localStorage.getItem('highscores')
-// }    
+if (finalScore !== null){
+    for (let index = 0; index < finalScore.length; index++) {
+        var x = document.createElement("li");
+        var t = document.createTextNode(`${index + 1}. ${finalScore[index].textInitial} - ${finalScore[index].userScore}`);
+        x.appendChild(t);
+        document.getElementById('.highScores').appendChild(x);
+        x.className += "userList";
+    }
+}
